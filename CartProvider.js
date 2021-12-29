@@ -44,7 +44,7 @@ const cartReducer = (state, action) => {
     const updatedTotalAmount = state.totalAmount - existingItem.price;
     let updatedItems;
 
-    if (existingItem === 1) {
+    if (existingItem.amount === 1) {
       updatedItems = state.items.filter((item) => item.id !== action.id); // This gets rid of the item from the array. So it removes it from the cart entirely.
     } else {
       const updatedItem = { ...existingItem, amount: existingItem.amount - 1 }; // This only removes 1 item from the array.
